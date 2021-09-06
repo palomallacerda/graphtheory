@@ -9,13 +9,13 @@
 
 using namespace std;
 class Aresta{
-	int vertice1, vertice2, peso;
+	int vertice1, vertice2, weight;
 
 public:
 	Aresta(int v1, int v2, int peso){
 		vertice1 = v1;
 		vertice2 = v2;
-		this->peso = peso;
+		this->weight = peso;
 	}
 	int obterVertice1()	{
 		return vertice1;
@@ -24,12 +24,12 @@ public:
 		return vertice2;
 	}
 	int obterPeso(){
-		return peso;
+		return weight;
 	}
 	// sobrescrita do operador "<"
 	bool operator < (const Aresta& aresta2) const
 	{
-		return (peso < aresta2.peso);
+		return (weight < aresta2.weight);
 	}
 };
 
@@ -108,7 +108,7 @@ void iniciando(int i,Grafo g, int v, int aresta, int inicial, int final, int wei
 	else g.kruskal(); // roda o algoritmo de Kruskal	
 }
 
-int main(int argc, char *argv[]){
+int main(){
 
 	int vertice = 0, aresta=0, v1=0, v2=0, weight=0;
 	// Pega a qtd de vértices
