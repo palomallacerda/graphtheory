@@ -27,7 +27,8 @@ This repository is dedicated to the implementation of the algorithms of Graphs T
 
 #### Input example
 
-``` 7 11
+```
+    7 11
     0 1 7
     0 3 5
     1 2 8
