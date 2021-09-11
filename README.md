@@ -29,7 +29,7 @@ This repository is dedicated to the implementation of the algorithms of Graphs T
     g++ -o kruskal kruskal.cpp
 
 ## To run Kruskall using a File
-    ./kruskall < kruskall.input
+    ./kruskal < kruskall.input
 
 #### Input example
 
