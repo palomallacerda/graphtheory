@@ -1,14 +1,17 @@
 # Implementation of algorithms most used in Graphs Theory
 This repository is dedicated to the implementation of the algorithms of Graphs Theory's subjects.
 
-> Status do Projeto: Em desenvolvimento :warning: 
+> Status do Projeto: Em desenvolvimento :warning:
 
 ## To run FordFullkerson code use
-    g++ -o grafo fordFullkerson.cpp
+    g++ -o ford fordFullkerson.cpp
+
+## To run Ford Fullkerson using a File
+    ./ford < ford.input
 
 #### Input example
 
-``` 
+```
     5 5
     0 3
     0 1 1000
@@ -16,7 +19,7 @@ This repository is dedicated to the implementation of the algorithms of Graphs T
     1 2 1
     1 3 1000
     2 3 1000
-```    
+```
 #### Output example
     Your max flow is: 2000
 
@@ -24,6 +27,9 @@ This repository is dedicated to the implementation of the algorithms of Graphs T
 
 ## To run Kruskall code use
     g++ -o kruskal kruskal.cpp
+
+## To run Kruskall using a File
+    ./kruskall < kruskall.input
 
 #### Input example
 
@@ -40,7 +46,7 @@ This repository is dedicated to the implementation of the algorithms of Graphs T
     4 5 8
     4 6 9
     5 6 11
-```    
+```
 #### Output example
     (A, D) = 5
     (C, E) = 5
@@ -48,4 +54,4 @@ This repository is dedicated to the implementation of the algorithms of Graphs T
     (A, B) = 7
     (B, E) = 7
     (E, G) = 9
-    Your Final Weight is: 39 
+    Your Final Weight is: 39
