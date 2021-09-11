@@ -17,13 +17,13 @@ public:
 		vertice2 = v2;
 		this->weight = peso;
 	}
-	int obterVertice1()	{
+	int getv1()	{
 		return vertice1;
 	}
-	int obterVertice2()	{
+	int getv2()	{
 		return vertice2;
 	}
-	int obterPeso(){
+	int getweight(){
 		return weight;
 	}
 	// sobrescrita do operador "<"
@@ -37,7 +37,7 @@ class Grafo{
 	int V; // número de vértices
 	vector<Aresta> arestas; // vetor de arestas
 public:
-	Grafo(int V){ 
+	Grafo(int V){
 		this->V = V;
 	}
 
@@ -75,8 +75,8 @@ public:
 		memset(subset, -1, sizeof(int) * V);
 
 		for(int i = 0; i < size_arestas; i++){
-			int v1 = buscar(subset, arestas[i].obterVertice1());
-			int v2 = buscar(subset, arestas[i].obterVertice2());
+			int v1 = buscar(subset, arestas[i].getv1());
+			int v2 = buscar(subset, arestas[i].getv2());
 
 			if(v1 != v2)
 			{
@@ -90,10 +90,10 @@ public:
 		int FINAL_WEIGHT =0;
 		// mostra as arestas selecionadas com seus respectivos pesos
 		for(int i = 0; i < size_arvore; i++){
-			char v1 = 'A' + arvore[i].obterVertice1();
-			char v2 = 'A' + arvore[i].obterVertice2();
-			FINAL_WEIGHT += arvore[i].obterPeso();
-			cout << "(" << v1 << ", " << v2 << ") = " << arvore[i].obterPeso() << endl;
+			char v1 = 'A' + arvore[i].getv1();
+			char v2 = 'A' + arvore[i].getv2();
+			FINAL_WEIGHT += arvore[i].getweight();
+			cout << "(" << v1 << ", " << v2 << ") = " << arvore[i].getweight() << endl;
 		}
 			cout << "Your Final Weight is: " << FINAL_WEIGHT << endl;
 	}
@@ -105,7 +105,7 @@ void iniciando(int i,Grafo g, int v, int aresta, int inicial, int final, int wei
 		g.adicionarAresta(inicial, final, weight);
 		iniciando(i+1, g, v, aresta, inicial, final, weight);
 	}
-	else g.kruskal(); // roda o algoritmo de Kruskal	
+	else g.kruskal(); // roda o algoritmo de Kruskal
 }
 
 int main(){
@@ -114,8 +114,8 @@ int main(){
 	// Pega a qtd de vértices
 	scanf("%d %d",&vertice, &aresta);
 	Grafo g(vertice); // grafo
+
 	// adiciona as arestas
-	
 	iniciando(0, g, vertice, aresta, v1, v2,weight);
 	return 0;
 }
