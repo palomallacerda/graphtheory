@@ -55,3 +55,28 @@ This repository is dedicated to the implementation of the algorithms of Graphs T
     (B, E) = 7
     (E, G) = 9
     Your Final Weight is: 39
+
+## To run FordFullkerson code use
+    g++ -o Prim Prim.cpp
+
+## To run Ford Fullkerson using a File
+    ./Prim < input.txt
+
+#### Input example
+
+#### First line Vertices and Edges both int. Last line will be the initial vertice of algorithm.
+
+```
+   6 8
+   1 2 5
+   1 3 4
+   1 4 2
+   1 6 6
+   2 4 1
+   2 5 7
+   3 5 6
+   4 6 1
+   1
+```
+#### Output example
+    AGM/MST = 14
