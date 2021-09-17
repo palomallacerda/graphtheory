@@ -18,7 +18,7 @@ struct Vertice // estrutura que guarda as cabeças das listas de adjacência
 
 struct Graph // Estrurura contendo o grafo
 {
-    int vertices;   
+    int vertices;
     int arestas;
     Vertice *adj;
 };
@@ -30,14 +30,14 @@ Graph *Create_graph(int v) // Função que cria o grafo
     G->vertices = v;
     G->arestas = 0;
     G->adj = (Vertice*)malloc( (v + 1) * sizeof(Adjacency));
-    
+
     for (int i = 0; i <= v; i++)
     {
         G->adj[i].head = NULL;
     }
-    
+
     return(G);
-    
+
 }
 Adjacency *vertic(int v, int weigth)// coloca o peso da aresta entre o vétice de inicio e v que é o de chegada
 {
@@ -61,15 +61,15 @@ bool Create_Arest(Graph *G, int vi, int vf, int weitgh) // cria as arestas entre
     novo->prox = G->adj[vi].head;
     G->adj[vi].head = novo;
 
-  
-        
+
+
     aux->prox = G->adj[vf].head;
     G->adj[vf].head = aux;
-    
-    
+
+
     G->arestas++;
 
-    return true;    
+    return true;
 }
 Adjacency *Remove(Adjacency *T, int vrtc)//Função remover para retirar os vértices já verificados
 {
@@ -86,9 +86,9 @@ Adjacency *Remove(Adjacency *T, int vrtc)//Função remover para retirar os vér
         {
             T = T->prox;
             free(aux);
-            return T;           
+            return T;
         }
-        
+
 
 
         while (aux->vertice != vrtc)
@@ -96,13 +96,12 @@ Adjacency *Remove(Adjacency *T, int vrtc)//Função remover para retirar os vér
             anterior = aux;
             aux = aux->prox;
         }
-        
+
         anterior->prox = aux->prox;
         free(aux);
 
         return T;
     }
-    
 }
 Adjacency *Create_queue(Graph *G,int key[])// Cria a fila de vértices
 {
@@ -126,16 +125,12 @@ Adjacency *Create_queue(Graph *G,int key[])// Cria a fila de vértices
                 aux = aux->prox;
             }
             aux->prox = novo;
-            
         }
-        
     }
     return fila;
-    
 }
 int extrair_min(Adjacency *T,int keys[])// extrai a aresta com menor peso
 {
-    
     Adjacency *aux = T;
     int u = aux->vertice;
     int min = 1000;
@@ -149,10 +144,8 @@ int extrair_min(Adjacency *T,int keys[])// extrai a aresta com menor peso
         }
         aux = aux->prox;
     }
-    
+
     return u;
-    
-   
 }
 bool belong(Adjacency *G, Adjacency *T)// Verifica se um vértice está na fila T
 {
@@ -166,9 +159,8 @@ bool belong(Adjacency *G, Adjacency *T)// Verifica se um vértice está na fila 
             return true;
         }
       aux = aux->prox;
-    }   
+    }
     return false;
-    
 }
 int Prim(Graph *G) // Algoritmo de Prim para calcular a Arvore Geradora Mínima(AGM) ou Minimum Spanning Tree(MST)
 {
@@ -194,7 +186,7 @@ int Prim(Graph *G) // Algoritmo de Prim para calcular a Arvore Geradora Mínima(
     }
     key[initial] = 0;
     T = Create_queue(G, key);
- 
+
 
     while (T != NULL)
     {
@@ -208,21 +200,18 @@ int Prim(Graph *G) // Algoritmo de Prim para calcular a Arvore Geradora Mínima(
             {
                 father[aux->vertice] = u;
                 key[aux->vertice] = aux->peso;
-                
+
             }
             aux = aux->prox;
-            
         }
         T = Remove(T, u);
-         
-
     }
-    
-    
+
+
     int cost = 0;
 
     for (int i = 1; i <= G->vertices; i++)
-    {   
+    {
         printf("Fathers[%d] : %d\n", i, father[i]);
         cost = cost + key[i];
     }
@@ -248,13 +237,11 @@ int main()
 
         Create_Arest(G, vi, vf, Peso);
     }
-    
 
     int cost = Prim(G);
 
     printf("\nAGM/MST cost: %d\n", cost);
     return 0;
-    
 }
 
 
