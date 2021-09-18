@@ -104,7 +104,7 @@ Adjacency *Remove(Adjacency *T, int vrtc)//Função remover para retirar os vér
         return T;
     }
 }
-Adjacency *Create_queue(Graph *G,float key[])// Cria a fila de vértices
+Adjacency *Create_queue(Graph *G,double key[])// Cria a fila de vértices
 {
     Adjacency *fila = NULL, *novo = NULL;
 
@@ -130,11 +130,11 @@ Adjacency *Create_queue(Graph *G,float key[])// Cria a fila de vértices
     }
     return fila;
 }
-int extrair_min(Adjacency *T,float keys[])// extrai a aresta com menor peso
+int extrair_min(Adjacency *T,double keys[])// extrai a aresta com menor peso
 {
     Adjacency *aux = T;
     int u = aux->vertice;
-    int min = INFINITY;
+    float min = INFINITY;
 
     while (aux != NULL)
     {
@@ -163,13 +163,13 @@ bool belong(Adjacency *G, Adjacency *T)// Verifica se um vértice está na fila 
     }
     return false;
 }
-int Prim(Graph *G) // Algoritmo de Prim para calcular a Arvore Geradora Mínima(AGM) ou Minimum Spanning Tree(MST)
+int Dijkstra(Graph *G) // Algoritmo de Prim para calcular a Arvore Geradora Mínima(AGM) ou Minimum Spanning Tree(MST)
 {
     int initial;
     int father[G->vertices + 1]; // lista que indica de qual vértice chegou ao vértice atual;
     Adjacency *T = NULL; // Subgrafo no qual será armazenado a árvore;
 
-    float key[G->vertices + 1];
+    double key[G->vertices + 1];
 
     scanf("%d", &initial);
 
@@ -197,10 +197,10 @@ int Prim(Graph *G) // Algoritmo de Prim para calcular a Arvore Geradora Mínima(
 
         while (aux != NULL)
         {
-            if (belong(aux, T) == true && aux->peso < key[aux->vertice])
+            if (belong(aux, T) == true && (aux->peso + key[u] < key[aux->vertice]))
             {
                 father[aux->vertice] = u;
-                key[aux->vertice] = aux->peso;
+                key[aux->vertice] = aux->peso + key[u];
 
             }
             aux = aux->prox;
@@ -209,14 +209,33 @@ int Prim(Graph *G) // Algoritmo de Prim para calcular a Arvore Geradora Mínima(
     }
 
 
-    int cost = 0;
+    printf("do you want to print the distance from the starting vertex to a specific vertex?\n(0) : no\n(1) : yes\n\n");
 
-    for (int i = 1; i <= G->vertices; i++)
+    int decision;
+
+    printf("Decision: ");
+    scanf("%d", &decision);
+
+    if (decision == 1)
     {
-        printf("Fathers[%d] : %d\n", i, father[i]);
-        cost = cost + key[i];
+        int final;
+        printf("\nSpecific vertice: ");
+        scanf("%d", &final);
+
+        printf("\nDistancy (%d, %d) = %.lf\n", initial, final, key[final]);
+        
     }
-    return cost;
+    else
+    {
+        printf("\n\n");
+        for (int i = 1; i <= G->vertices; i++)
+        {
+            printf("Distacy(%d, %d) = %.lf\n", initial, i, key[i]);
+        }
+        
+    }
+    return 0;
+     
 
 }
 int main()
@@ -239,10 +258,7 @@ int main()
         Create_Arest(G, vi, vf, Peso);
     }
 
-    int cost = Prim(G);
+    int cost = Dijkstra(G);
 
-    printf("\nAGM/MST cost: %d\n", cost);
     return 0;
 }
-
-

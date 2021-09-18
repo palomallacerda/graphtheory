@@ -80,4 +80,53 @@ This repository is dedicated to the implementation of the algorithms of Graphs T
    1
 ```
 #### Output example
+#### The initial vertice have father -1
+
+    Father[1] = -1
+    Father[2] = 4
+    Father[3] = 1
+    Father[4] = 1
+    Father[5] = 3
+    Father[6] = 4
+
     AGM/MST = 14
+
+## To run Dijkstra code use
+    g++ -o Dijkstra Dijkstra.cpp
+    ./Dijkstra
+
+## To run Dijkstra using a file
+    g++ -o Dijkstra Dijkstra.cpp
+    ./Dijkstra < input.txt
+
+#### Input example
+### the last line is a specific vertice
+
+#### The Penultimate is a decision to print all vertices or a specific vertex, (0) : print all vertices and (1) :  print a specific vertice
+
+#### The antepenultimate line is the initial vértice
+```
+    6 8
+    1 2 5
+    1 3 4
+    1 4 2
+    1 6 6
+    2 4 1
+    2 5 7
+    3 5 6
+    4 6 1
+    1
+    0
+    5
+
+```
+#### Ouput example
+```
+    Distacy(1, 1) = 0
+    Distacy(1, 2) = 3
+    Distacy(1, 3) = 4
+    Distacy(1, 4) = 2
+    Distacy(1, 5) = 10
+    Distacy(1, 6) = 3
+```
+    
