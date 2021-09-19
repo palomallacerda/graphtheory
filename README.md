@@ -107,9 +107,9 @@ This repository is dedicated to the implementation of the algorithms of Graphs T
 ### Input example
 #### the last line is a specific vertice
 
-#### The Penultimate is a decision to print all vertices or a specific vertex, (0) : print all vertices and (1) :  print a specific vertice
+#### The penultimate is a decision to print all vertices or a specific vertex, (0) : print all vertices and (1) :  print a specific vertice
 
-#### The antepenultimate line is the initial vértice
+#### The second to last  line is the initial vertice
 ```
     6 8
     1 2 5
