@@ -222,20 +222,20 @@ int Dijkstra(Graph *G) // Algoritmo de Prim para calcular a Arvore Geradora Mín
         printf("\nSpecific vertice: ");
         scanf("%d", &final);
 
-        printf("\nDistancy (%d, %d) = %.lf\n", initial, final, key[final]);
-        
+        printf("\nDistance(%d, %d) = %.lf\n", initial, final, key[final]);
+
     }
     else
     {
         printf("\n\n");
         for (int i = 1; i <= G->vertices; i++)
         {
-            printf("Distacy(%d, %d) = %.lf\n", initial, i, key[i]);
+            printf("Distance(%d, %d) = %.lf\n", initial, i, key[i]);
         }
-        
+
     }
     return 0;
-     
+
 
 }
 int main()
