@@ -4,8 +4,10 @@ This repository is dedicated to the implementation of the algorithms of Graphs T
 > Project Status: Concluded :heavy_check_mark:
 ## To run FordFullkerson code use
     g++ -o ford fordFullkerson.cpp
+    ./ford
 
 ## To run Ford Fullkerson using a File
+    g++ -o ford fordFullkerson.cpp
     ./ford < ford.input
 
 #### Input example
@@ -26,8 +28,10 @@ This repository is dedicated to the implementation of the algorithms of Graphs T
 
 ## To run Kruskall code use
     g++ -o kruskal kruskal.cpp
+    ./kruskal
 
 ## To run Kruskall using a File
+    g++ -o kruskal kruskal.cpp
     ./kruskal < kruskall.input
 
 #### Input example
@@ -57,8 +61,10 @@ This repository is dedicated to the implementation of the algorithms of Graphs T
 
 ## To run Prim code use
     g++ -o Prim Prim.cpp
+    ./Prim
 
 ## To run Prim using a File
+    g++ -o Prim Prim.cpp
     ./Prim < input.txt
 
 #### Input example
