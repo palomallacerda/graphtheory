@@ -1,6 +1,6 @@
-
 /*
 	Implementação do algoritmo de Kruskal
+			  Usando classes
 */
 #include <iostream>
 #include <vector>
@@ -26,7 +26,7 @@ public:
 	int getweight(){
 		return weight;
 	}
-	// sobrescrita do operador "<"
+
 	bool operator < (const Aresta& aresta2) const
 	{
 		return (weight < aresta2.weight);
@@ -41,13 +41,13 @@ public:
 		this->V = V;
 	}
 
-	// função que adiciona uma aresta
+	// Adiciona uma aresta
 	void adicionarAresta(int v1, int v2, int peso){
 		Aresta aresta(v1, v2, peso);
 		arestas.push_back(aresta);
 	}
 
-	// função que busca o subconjunto de um elemento "i"
+	// Função busca o elemento i
 	int buscar(int subset[], int i){
 		if(subset[i] == -1)
 			return i;
@@ -68,7 +68,7 @@ public:
 		// ordena as arestas pelo menor peso
 		sort(arestas.begin(), arestas.end());
 
-		// aloca memória para criar "V" subconjuntos
+		//Alocando memória
 		int * subset = new int[V];
 
 		// inicializa todos os subconjuntos como conjuntos de um único elemento
