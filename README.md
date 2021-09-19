@@ -1,8 +1,7 @@
 # Implementation of algorithms most used in Graphs Theory
 This repository is dedicated to the implementation of the algorithms of Graphs Theory's subjects.
 
-> Project Status: Concluded :ballot_box_with_check:
-
+> Project Status: Concluded :heavy_check_mark:
 ## To run FordFullkerson code use
     g++ -o ford fordFullkerson.cpp
 
