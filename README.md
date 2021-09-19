@@ -68,9 +68,10 @@ This repository is dedicated to the implementation of the algorithms of Graphs T
     ./Prim < input.txt
 
 #### Input example
-
-#### First line Vertices and Edges both integer.
-#### Last line will be the initial vertice of algorithm.
+<ul>
+    <li>First line Vertices and Edges both integer.</li>
+    <li>Last line will be the initial vertice of algorithm.</li>
+</ul>
 
 ```
    6 8
@@ -106,9 +107,11 @@ This repository is dedicated to the implementation of the algorithms of Graphs T
 
 ### Input example
 
-The last line is a specific vertice <br>
-The penultimate is a decision to print all vertices or a specific vertex, (0) : print all vertices and (1) :  print a specific vertice <br>
-The second to last  line is the initial vertice <br>
+<ul>
+    <li>The last line is a specific vertice </li>
+    <li> The penultimate is a decision to print all vertices or a specific vertex, (0) : print all vertices and (1) :  print a specific vertice</li>
+    <li>The second to last  line is the initial vertice</li>
+</ul>
 
 ```
     6 8
