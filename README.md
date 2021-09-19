@@ -1,7 +1,7 @@
 # Implementation of algorithms most used in Graphs Theory
 This repository is dedicated to the implementation of the algorithms of Graphs Theory's subjects.
 
-> Status do Projeto: Em desenvolvimento :warning:
+> Project Status: Concluded :ballot_box_with_check:
 
 ## To run FordFullkerson code use
     g++ -o ford fordFullkerson.cpp
@@ -99,8 +99,8 @@ This repository is dedicated to the implementation of the algorithms of Graphs T
     g++ -o Dijkstra Dijkstra.cpp
     ./Dijkstra < input.txt
 
-#### Input example
-### the last line is a specific vertice
+### Input example
+#### the last line is a specific vertice
 
 #### The Penultimate is a decision to print all vertices or a specific vertex, (0) : print all vertices and (1) :  print a specific vertice
 
@@ -122,11 +122,10 @@ This repository is dedicated to the implementation of the algorithms of Graphs T
 ```
 #### Ouput example
 ```
-    Distacy(1, 1) = 0
-    Distacy(1, 2) = 3
-    Distacy(1, 3) = 4
-    Distacy(1, 4) = 2
-    Distacy(1, 5) = 10
-    Distacy(1, 6) = 3
+    Distance(1, 1) = 0
+    Distance(1, 2) = 3
+    Distance(1, 3) = 4
+    Distance(1, 4) = 2
+    Distance(1, 5) = 10
+    Distance(1, 6) = 3
 ```
-    
