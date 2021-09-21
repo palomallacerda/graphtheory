@@ -1,7 +1,9 @@
 # Implementation of algorithms most used in Graphs Theory
 This repository is dedicated to the implementation of the algorithms of Graphs Theory's subjects.
+Students : Paloma Lacerda and Rodrigo Ferreira
 
 > Project Status: Concluded :heavy_check_mark:
+
 ## To run FordFullkerson code use
     g++ -o ford fordFullkerson.cpp
     ./ford
