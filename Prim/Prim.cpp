@@ -62,11 +62,8 @@ bool Create_Arest(Graph *G, int vi, int vf, int weitgh) // cria as arestas entre
     novo->prox = G->adj[vi].head;
     G->adj[vi].head = novo;
 
-
-
     aux->prox = G->adj[vf].head;
     G->adj[vf].head = aux;
-
 
     G->arestas++;
 
