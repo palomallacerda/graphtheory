@@ -1,5 +1,6 @@
 # Implementation of algorithms most used in Graphs Theory
-This repository is dedicated to the implementation of the algorithms of Graphs Theory's subjects.
+This repository is dedicated to the implementation of the algorithms of Graphs Theory's subjects.<br>
+
 Students : Paloma Lacerda and Rodrigo Ferreira
 
 > Project Status: Concluded :heavy_check_mark:
