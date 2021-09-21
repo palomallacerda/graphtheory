@@ -34,8 +34,7 @@ bool my_bfs(graph g, ford resto, int s, int e, int pai[]){
         pilha.pop();
 
         for(int i = 0; i < g.vertice; i++){
-            if(resto[deque][i] > 0 && !last_visi[i])
-            {
+            if(resto[deque][i] > 0 && !last_visi[i]){
                 pai[i] = deque;
                 last_visi[i] = true;
                 pilha.push(i);
